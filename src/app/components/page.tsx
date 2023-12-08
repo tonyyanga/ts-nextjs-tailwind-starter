@@ -1,5 +1,10 @@
 'use client';
 
+// Quest is used to collect user feedback. To remove it:
+// 1. Remove the import
+// 2. Remove the QuestProvider component
+// 3. npm remove @questlabs/react-sdk
+import { Feedback, QuestProvider } from '@questlabs/react-sdk';
 import clsx from 'clsx';
 import {
   ArrowRight,
@@ -56,6 +61,20 @@ export default function ComponentPage() {
             >
               Set to {mode === 'dark' ? 'light' : 'dark'}
             </Button>
+            <QuestProvider
+              apiKey='k-ac177ec6-3e03-4526-b198-d085822d261e'
+              apiSecret='s-3a33b9f7-275e-44df-8225-a6da1835e7db3c24e655-f7fb-428a-8b61-fc89a001ff22'
+              entityId='e-cbd250cc-3fcb-4085-a95e-712742ffa7ac'
+            >
+              <Feedback
+                heading='your-heading'
+                userId='userid'
+                subHeading='subheading'
+                questId='your-questId'
+                token='your-token'
+                supportUrl='contact-support'
+              />
+            </QuestProvider>
             {/* <Button onClick={randomize}>Randomize CSS Variable</Button> */}
           </div>
 
